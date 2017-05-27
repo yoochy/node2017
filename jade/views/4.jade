@@ -1,0 +1,17 @@
+html
+  div#new2
+  div.news
+  div(title="aaa",id="div3")
+  div&attributes({title:'aaa',id:'div3'})
+  div(style="width:200px;height:40px;background:red")
+  //-普通写法
+  div(style={width:'200px',height:'40px',background:'red'})
+  //-json写法，便于修改
+  div(title={width:'200px',height:'40px',background:'red'})
+  //-只有style可以这么写不然返回object
+  div(class="new new2 btn")
+  //-普通写法
+  div(class=['new','new2','btn'])
+  //-数组写法，便于动态修改
+  div(title=['new','new2','btn'])
+  //-只有class可以这么写，不然数组自动加逗号转换成字符串

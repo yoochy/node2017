@@ -1,0 +1,129 @@
+///抓取时间
+var all=document.getElementsByClassName("WB_detail");
+console.log(all.length);
+var e="";
+for(var i=0;i<all.length;i++){
+var b=all[i].getElementsByClassName("WB_from S_txt2");
+e+=b[0].innerText.substr(0,11)+"\n";
+}
+console.log(e);
+window.copy(e);
+console.log("复制成功");
+
+
+///抓取微博内容
+var all=document.getElementsByClassName("WB_text W_f14");
+console.log(all.length);
+var e="";
+for(var i=0;i<all.length;i++){
+
+e+=all[i].innerText.substr(0,120)+"\n";
+}
+console.log(e);
+window.copy(e);
+console.log("复制成功");
+
+//抓取转发
+
+var all=document.getElementsByClassName("WB_feed_handle");
+console.log(all.length);
+var e="";
+for(var i=0;i<all.length;i++){
+var b=all[i].getElementsByClassName("line S_line1");
+e+=b[1].innerText+"\n";
+}
+console.log(e);
+window.copy(e);
+console.log("复制成功");
+
+//抓取评论
+
+
+var all=document.getElementsByClassName("WB_feed_handle");
+console.log(all.length);
+var e="";
+for(var i=0;i<all.length;i++){
+var b=all[i].getElementsByClassName("line S_line1");
+e+=b[2].innerText.substr(1,7)+"\n";
+}
+console.log(e);
+window.copy(e);
+console.log("复制成功");
+
+//抓取点赞
+
+var all=document.getElementsByClassName("WB_feed_handle");
+console.log(all.length);
+var e="";
+for(var i=0;i<all.length;i++){
+var b=all[i].getElementsByClassName("line S_line1");
+var c=b[3].getElementsByTagName("em");
+
+e+=c[1].innerText+"\n";
+
+}
+console.log(e);
+window.copy(e);
+console.log("复制成功");
+
+
+
+//微博匹配话题
+
+var all=document.getElementsByClassName("WB_text W_f14");
+console.log(all.length);
+var e="";
+var new1="";
+var xc="";
+for(var i=0;i<all.length;i++){
+
+	e=all[i].innerText+"\n";
+reg=/#[^#]*#/g;
+var a = e.match(reg);
+
+
+if(a!== null){
+  
+  new1=a.join("、")+"\n";
+console.log(new1+"*");
+}
+else{
+	new1="\n"
+console.log("空");
+}
+xc+=new1;
+}
+
+console.log(xc);
+window.copy(xc);
+console.log("复制成功");
+
+
+//微博匹配@用户
+var all=document.getElementsByClassName("WB_text W_f14");
+console.log(all.length);
+var e="";
+var new1="";
+var xc="";
+for(var i=0;i<all.length;i++){
+
+	e=all[i].innerText+"\n";
+reg=/@[^@]+?(?=[\s:：(),.。])/g;
+var a = e.match(reg);
+
+
+if(a!== null){
+  
+  new1=a.join("、")+"\n";
+console.log(new1+"*");
+}
+else{
+	new1="\n"
+console.log("空");
+}
+xc+=new1;
+}
+
+console.log(xc);
+window.copy(xc);
+console.log("复制成功");

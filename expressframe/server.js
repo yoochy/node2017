@@ -7,7 +7,7 @@ const ejs=require('ejs');
 const jade=require('jade');
 
 var server=express();
-server.listen(8080);
+server.listen(5252);
 //1.解析cookie
 server.use(cookieParser('sssdaafddsdsfsd'));
 //2.使用session

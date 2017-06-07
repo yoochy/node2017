@@ -1,5 +1,5 @@
 const express=require('express');
-const static=require('static');
+const static=require('express-static');
 const mysql=require('mysql');
 const multer=require('multer');
 const multerObj=multer({dest:'./static/upload'});
@@ -25,7 +25,7 @@ for(var i=0;i<100000;i++){
   keys[i]='a_'+Math.random();
 
 }
-sever.use(cookieSession({
+server.use(cookieSession({
   name:'sess_id',
   keys:keys,
   maxAge:20*60*1000
@@ -37,8 +37,8 @@ server.engine('html',consolidate.ejs);
 server.set('views','template');
 server.set('view engine','html');
 //4.route
-server.use('/article',require('./route/1.js')());
-server.use('/article',require('./route/2.js')());
+server.use('/article/',require('./route/1.js')());
+server.use('/blog/',require('./route/2.js')());
 
 //5.default：static
-server.use(static('./static/'));
+server.use(static('./static'));

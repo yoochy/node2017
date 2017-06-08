@@ -1,5 +1,6 @@
 const express=require('express');
 const static=require('express-static');
+const bodyParser=require('body-parser');
 const mysql=require('mysql');
 const multer=require('multer');
 const multerObj=multer({dest:'./static/upload'});
@@ -14,8 +15,8 @@ server.listen(5252);
 
 //1.获取前台请求数据
 //get自带
-server.use(multerObj.any());
-
+server.use(bodyParser.urlencoded());
+server.use(multerObj.any())
 
 //2.cookie，session
 server.use(cookieParser());
@@ -37,8 +38,8 @@ server.engine('html',consolidate.ejs);
 server.set('views','template');
 server.set('view engine','html');
 //4.route
-server.use('/article/',require('./route/1.js')());
-server.use('/blog/',require('./route/2.js')());
+server.use('/',require('./route/web.js')());
+server.use('/admin/',require('./route/admin.js')());
 
 //5.default：static
 server.use(static('./static'));

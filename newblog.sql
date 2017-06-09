@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2017-06-08 17:30:34
+Date: 2017-06-09 17:50:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -58,11 +58,14 @@ CREATE TABLE `banner_table` (
   `description` varchar(300) NOT NULL COMMENT '描述文字',
   `href` varchar(300) NOT NULL COMMENT '点击链接',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of banner_table
 -- ----------------------------
+INSERT INTO `banner_table` VALUES ('5', '国家游泳队再曝兴奋剂中招 邱钰涵被禁赛9个月', '腾讯体育6月9日讯 近日，中国反兴奋剂中心官网发布了一则运动员兴奋剂违规处理结果，国家游泳队选手邱钰涵于2016年5月14日的赛外检测中被查出氢氯噻嗪，遭到禁赛9个月的处罚，处罚日期到2017年4月10日结束。', 'http://sports.qq.com/a/20170609/031363.htm');
+INSERT INTO `banner_table` VALUES ('6', '中国青少年近视率第一，因为户外活动太少', '[摘要]6月6日是第22个全国爱眼日，山东、湖南等多地媒体报道，当地中小学生近视率超五成。而根据世界卫生组织的相关数据，中国青少年近视率高居世界第一，小学生近视率超过40%，而美国在这个年龄段的近视率在10%左右。为什么中国有那么多近视眼？近些年的科学研究表明，是因为中国孩子在户外的时间实在是太少了。\r\n\r\n要点速读', 'http://news.qq.com/a/20170609/013022.htm');
+INSERT INTO `banner_table` VALUES ('7', '国家游泳队再曝兴奋剂中招 邱钰涵被禁赛9个月', '腾讯体育6月9日讯 近日，中国反兴奋剂中心官网发布了一则运动员兴奋剂违规处理结果，国家游泳队选手邱钰涵于2016年5月14日的赛外检测中被查出氢氯噻嗪，遭到禁赛9个月的处罚，处罚日期到2017年4月10日结束。', 'http://sports.qq.com/a/20170609/031363.htm');
 
 -- ----------------------------
 -- Table structure for blog_table

@@ -10,9 +10,25 @@ module.exports=function(){
 
   var router=express.Router();
 router.get('/',(req,res)=>{
-    res.render('admin/article.ejs', {});
+  var authorids=req.session['admin_id'];
+  db.query(`SELECT * FROM user_table WHERE ID='${authorids}'`,
+  (err,userss)=>{
+  if(err){
+    console.error(err);
+    res.status(500).send('database error').end();
+  }else{
+    if(userss.length==0){
+      res.status(400).send('没有这个用户').end();
+    }else {
 
-    });
+
+        res.render('admin/article.ejs', {userss});
+    }
+  }
+});
+});
+
+
 
   router.post('/',(req,res)=>{
     var title=req.body.title;
@@ -70,7 +86,7 @@ router.get('/',(req,res)=>{
 
 
 
-             
+
 
   return router;
 };

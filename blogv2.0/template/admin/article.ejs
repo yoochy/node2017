@@ -1,67 +1,117 @@
-<!doctype html>
-<html class="no-js">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Amaze UI Admin user Examples</title>
-  
-  
-  
-  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.css"/>
-  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
-</head>
+﻿<html>
+  <head>
+    <title>咪喵宠物</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="../css/base.css" rel="stylesheet" type="text/css">
+    <link href="../css/mydoc.css" rel="stylesheet" type="text/css">
+    <style media="screen">
+      .docList .form_group{
+        width: 6.4rem;height: 1rem; border-color: yellow;border:1px groove #aaaaaa;
+        background-color: #9e9a95;
+      }
+      .artintro textarea{
+        margin: 0.05rem;
+        width: 6rem;
+      }
+     .artintro textarea{
+        margin: 0.05rem;
+        width: 6rem;
+      }
+	.artsummary input{
+	margin: 0.05rem;
+        width: 6rem;
+      }
+       .arttitle input{
+	margin: 0.05rem;
+        width: 6rem;
+      }
+      .art-btn{
+        width:2rem;
+        height:0.55rem;
+         background:#4c4f50;
+         color:#fff;
+          text-align:center;
+           line-height:0.25rem;
+            border-radius:8px;
+             display:block;
+              margin-top:0.15rem;
+              margin-left: 34%;
+              font-size:0.28rem;}
+              .content{
+                background-color: #9e9a95;
+                height: 11rem;
+              }
+    </style>
+    <script src="../js/font.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+ </head>
 <body>
-        <div class="am-u-md-8 am-u-md-push-3">
-        <ul class="am-pagination">
-         <li><a href=""><span class="am-icon-angle-double-left"></span></a></li>
-    
-      </ul>
-      </div>
-        <div class="am-u-md-5 am-u-md-push-3 ">
-          <form class="am-form am-form-horizontal" action="?" method="post">
-            <div class="am-form-group">
-              <label for="user-name" class="am-u-sm-3 am-form-label">标题 / Name</label>
-              <div class="am-u-sm-9">
-                <input type="text" id="user-name" placeholder="标题 / Name" name="title">
-                <small>输入你的标题，让我们记住你。</small>
-              </div>
-            </div>
+<div class="content">
 
-            <div class="am-form-group">
-              <label for="user_content" class="am-u-sm-3 am-form-label">简介 / Email</label>
-              <div class="am-u-sm-9">
-                <input type="text" id="user-email" placeholder="输入你的简介/ Email" name="summary">
-                <small>简介你懂得...</small>
-              </div>
-            </div>
-            <div class="am-form-group">
-              <label for="user_summary" class="am-u-sm-3 am-form-label">内容 / Intro</label>
-              <div class="am-u-sm-9">
-                <textarea class="" rows="5" id="user-intro" placeholder="输入内容" name="content"></textarea>
-                <small>250字以内写出你的一生...</small>
-              </div>
-            </div>
+  <div class="header">
+    	<h2><img src="../<%=userss[0].src %>" /></h2>
+        <div class="user-box"><a href="login_user.html"><%=userss[0].username %></a></div>
+        <ul class="clear">
+        	<li>
+            	<span>0</span>
+                <p>关注</p>
+            </li>
+            <li>
+            	<span>0</span>
+                <p class="end">粉丝</p>
+            </li>
+        </ul>
+    </div>
+      <div class="docList">
+      <form class="" action="?" method="post">
+        <div class="form_group">
+          <label for="title" class="arttitle_lable">标题 / Title</label>
+          <div class="arttitle">
+            <input type="text"  placeholder="标题 / Title" name="arttitle_iput">
 
-            <div class="am-form-group">
-              <div class="am-u-sm-9 am-u-sm-push-3">
-                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
+        <div class="form_group">
+          <label for="summary" class="artsummary_label">简介 / Summary</label>
+          <div class="artsummary">
+            <input type="text" placeholder="输入你的简介/ Summary" name="summary">
 
+          </div>
+        </div>
+        <div class="form_group">
+          <label for="intro" class="intro_label">内容 / Intro</label>
+          <div class="artintro">
+            <textarea class="" rows="5" placeholder="输入内容" name="intro"></textarea>
 
-  
-  </div>
-  <!-- content end -->
+        </div>
+
+        <div class="form_group">
+          <div class="artsubmit">
+            <button type="submit" class="art-btn">保存修改</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
 </div>
-
-<script src="assets/js/jquery.min.js"></script>
-<!--<![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
-
-<script src="assets/js/app.js"></script>
+<div class="foot-btn">
+	<ul>
+    	<li class="home"><a href="index.html"></a></li>
+        <li class="write"><a href="javascript:;"></a></li>
+        <li class="my"><a href="mydoc.html"></a></li>
+    </ul>
+</div>
 </body>
 </html>
